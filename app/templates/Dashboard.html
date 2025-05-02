@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <!-- Placeholder: Will show total balance once data is added -->
+    <div class="tile">
+        <a href="{{url_for('balance')}}">
+            <h2>Balance</h2>
+        </a>
+    </div>
+    <div class="tile">
+        <a href="{{url_for('savings')}}">
+            <h2>Savings</h2>
+        </a>
+    </div>
+    <div class="tile">
+        <a href="{{url_for('expenses')}}">
+            <h2>Expenses</h2>
+        </a>
+    </div>
+    <div class="tile">
+        <a href="{{url_for('spendings')}}">
+            <h2>Spending</h2>
+        </a>
+    </div>
+
+{% endblock %}
