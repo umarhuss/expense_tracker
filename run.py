@@ -1,8 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request, url_for
 
 # Create an instance of the Flask class
 # Template folder tells flask where to look for templates
 app = Flask(__name__, template_folder="app/templates", static_folder="app/static")
+
+# variable to hold current balance temporarily
+current_balance = 0.00
 
 
 # Use @app to render pages it is a decorator so a function must go below
@@ -18,28 +21,42 @@ def dashboard():
     return render_template("Dashboard.html")
 
 
-@app.route("/balance")
+@app.route("/balance", methods=["GET"])
 def balance():
     # This goes to the balance page
-    return render_template("Balance.html")
+    return render_template(
+        "Balance.html", show_dashboard_link=True, current_balance=current_balance
+    )
 
 
 @app.route("/expenses")
 def expenses():
     # This goes to the expenses page
-    return render_template("Expenses.html")
+    return render_template("Expenses.html", show_dashboard_link=True)
 
 
 @app.route("/spendings")
 def spendings():
     # This goes to the spending page
-    return render_template("Spendings.html")
+    return render_template("Spendings.html", show_dashboard_link=True)
 
 
 @app.route("/savings")
 def savings():
     # This goes to the savings page
-    return render_template("Savings.html")
+    return render_template("Savings.html", show_dashboard_link=True)
+
+
+# route for the add money form
+@app.route("/add_money, methods=['POST'])")
+def add_money():
+    global current_balance
+    # Get information from the form
+    amount = float(request.form.get("amount"))
+    # Add this to the current balance
+    current_balance += amount
+    # Redirect to current balance page
+    return redirect(url_for("balance", 0))
 
 
 if __name__ == "__main__":

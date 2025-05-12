@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <!-- # Custom header -->
+    <header class="Tile-header">
+        <h1>Expenses</h1>
+    </header>
+{% endblock %}
+
+{% block sidebar %}
+    {% include '_sidebar.html' with context %}
+{% endblock %}
+
 {% block content %}
-    <h1>Expenses</h1>
+    <h1>placeholder</h1>
 
 {% endblock %}

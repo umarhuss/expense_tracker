@@ -9,7 +9,14 @@
 </head>
 <body>
     <!-- # Incorporate header from file -->
-    {% include 'header.html' %}
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    <div class="page-layout">
+        {% block sidebar %}
+        {% endblock %}
+    </div>
 
     <!-- # Main content area -->
     <div class="content">

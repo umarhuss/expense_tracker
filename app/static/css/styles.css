@@ -40,3 +40,37 @@ a {
 a:hover {
     color: #00bfff; /* Light blue on hover */
 }
+
+/* Balance Page */
+
+.balance_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 70vh;
+}
+
+.number_balance {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #f8f8f8;
+}
+
+.balance_button button {
+    background-color: #00c6ad;
+    color:  #ffffff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.balance_button button:hover {
+    background-color: #00a491;
+}

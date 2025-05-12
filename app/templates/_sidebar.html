@@ -1,0 +1,14 @@
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="{{url_for('balance')}}">Balance</a></li>
+                <li><a href="{{url_for('savings')}}">Savings</a></li>
+                <li><a href="{{url_for('expenses')}}">Expenses</a></li>
+                <li><a href="{{url_for('spendings')}}">Spending</a></li>
+                <!-- Placeholder for add account/card-->
+
+                {% if show_dashboard_link %}
+                <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+                {% endif %}
+            </ul>
+        </aside>

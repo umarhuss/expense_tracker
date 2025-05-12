@@ -1,17 +1,11 @@
 {% extends "base.html" %}
 
+{% block sidebar %}
+    {% include '_sidebar.html' with context %}
+{% endblock %}
+
 {% block content %}
     <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="{{url_for('balance')}}">Balance</a></li>
-                <li><a href="{{url_for('savings')}}">Savings</a></li>
-                <li><a href="{{url_for('expenses')}}">Expenses</a></li>
-                <li><a href="{{url_for('spendings')}}">Spending</a></li>
-                <!-- Placeholder for add account/card-->
-            </ul>
-        </aside>
         <!-- Main content -->
         <main class="main-content">
             <h1>Dashboard</h1>

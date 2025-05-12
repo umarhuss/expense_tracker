@@ -1,6 +1,26 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <!-- # Custom header -->
+    <header class="Tile-header">
+        <h1>Current Balance</h1>
+    </header>
+{% endblock %}
+
+{% block sidebar %}
+    {% include '_sidebar.html' with context %}
+{% endblock %}
+
 {% block content %}
-    <h1>Balance</h1>
+    <div class="balance_section">
+        <div class="number_balance">
+            £{{ "%.2f"|format(current_balance) }}
+        </div>
+
+        <div class="balance_button">
+            <button>Add Money</button>
+            <button>Add Card</button>
+        </div>
+    </div>
 
 {% endblock %}
